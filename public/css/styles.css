@@ -1,0 +1,190 @@
+/* ===== RESET BÁSICO ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    background-color: #fdfdfb;
+    color: #2e2e2e;
+    line-height: 1.6;
+}
+
+/* ===== VARIABLES ===== */
+:root {
+    --verde: #3a6f64;
+    --coral: #e07a5f;
+    --arena: #f4f1ec;
+    --oscuro: #2e2e2e;
+}
+
+/* ===== LINKS ===== */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ===== BOTONES ===== */
+.btn-primary {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 26px;
+    background-color: var(--verde);
+    color: #fff;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--coral);
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+}
+
+.logo {
+    height: 40px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    font-size: 0.9rem;
+    color: var(--oscuro);
+}
+
+/* ===== HERO ===== */
+.hero {
+    min-height: 100vh;
+    background: repeating-linear-gradient(
+        90deg,
+        #1f646b 0,
+        #1f646b 80px,
+        #8b1d2c 80px,
+        #8b1d2c 160px
+    );
+}
+
+.hero-content {
+    height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content h1 {
+    color: #e6d27a;
+    font-family: "Playfair Display", serif;
+    font-size: 4rem;
+    letter-spacing: 0.1em;
+}
+
+.hero-content p {
+    margin-top: 10px;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+
+/* ===== SECCIONES ===== */
+.section {
+    padding: 80px 10%;
+    background-color: #fff;
+}
+
+.section:nth-child(even) {
+    background-color: var(--arena);
+}
+
+.section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--verde);
+}
+
+.section p {
+    max-width: 700px;
+    margin-bottom: 15px;
+}
+
+/* ===== LISTA DE CUIDADOS ===== */
+.care-list {
+    max-width: 600px;
+    list-style: disc;
+    padding-left: 20px;
+}
+
+/* ===== CONTACTO ===== */
+.contact {
+    text-align: center;
+}
+
+.contact p {
+    margin-bottom: 8px;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    background-color: var(--verde);
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.8rem;
+}
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+
+    /* NAVBAR */
+    .navbar {
+        padding: 15px 25px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* HERO */
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .btn-primary {
+        padding: 10px 22px;
+        font-size: 0.85rem;
+    }
+
+    /* SECCIONES */
+    .section {
+        padding: 60px 8%;
+    }
+
+    .section h2 {
+        font-size: 1.6rem;
+    }
+}

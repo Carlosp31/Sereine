@@ -1,0 +1,64 @@
+/* ===== GRID DE PRODUCTOS ===== */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+/* ===== TARJETA ===== */
+.product-card {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== IMAGEN ===== */
+.product-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* ===== TEXTO ===== */
+.product-card h3 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.product-card p {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.product-card span {
+    font-size: 0.8rem;
+    color: var(--verde);
+}
+@media (max-width: 768px) {
+
+    .products-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .product-card img {
+        height: 240px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
