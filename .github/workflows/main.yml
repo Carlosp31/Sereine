@@ -5,3 +5,12 @@ on:
       - main
 
 jobs:
+  test:
+    runs-on: [self-hosted, carlos]
+
+    steps:
+      - name: Mostrar info básica
+        run: |
+          whoami
+          pwd
+          ls -la
