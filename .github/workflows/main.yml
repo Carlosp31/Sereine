@@ -6,7 +6,7 @@ on:
 
 jobs:
   test:
-    runs-on: [self-hosted, carlos]
+    runs-on: self-hosted
 
     steps:
       - name: Mostrar info básica
