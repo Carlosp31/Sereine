@@ -16,3 +16,5 @@ jobs:
         run: |
           pwd
           ls -la
+      - name: Reiniciar la app con PM2
+        run: pm2 restart sereine-app
