@@ -9,8 +9,10 @@ jobs:
     runs-on: self-hosted
 
     steps:
-      - name: Mostrar info básica
+      - name: Descargar código del repo
+        uses: actions/checkout@v4
+
+      - name: Ver archivos del repo
         run: |
-          whoami
           pwd
           ls -la
