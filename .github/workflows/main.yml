@@ -17,4 +17,6 @@ jobs:
           pwd
           ls -la
       - name: Reiniciar la app con PM2
+        env:
+          NODE_ENV: production   # <-- Aquí defines la variable de entorno
         run: pm2 restart sereine-app
