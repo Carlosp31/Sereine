@@ -10,9 +10,10 @@ const HTTP_PORT = 80;
 
 // Certificados Let’s Encrypt
 const options = {
-    key: fs.readFileSync("/etc/letsencrypt/live/sereinesoul.com/privkey.pem"),
-    cert: fs.readFileSync("/etc/letsencrypt/live/sereinesoul.com/fullchain.pem")
+    key: fs.readFileSync("/home/ubuntu/certs/privkey.pem"),
+    cert: fs.readFileSync("/home/ubuntu/certs/fullchain.pem")
 };
+
 
 // Redirigir sin www → www
 app.use((req, res, next) => {
