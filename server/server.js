@@ -13,6 +13,6 @@ app.get("/", (req, res) => {
 });
 
 // Levantar servidor
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
     console.log(`🔥 Sereine Soul corriendo en http://localhost:${PORT}`);
 });
