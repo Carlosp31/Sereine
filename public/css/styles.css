@@ -66,7 +66,7 @@ a {
 
 .nav-links a {
     font-size: 0.9rem;
-    color: var(--oscuro);
+    color:  #e6d27a;
 }
 
 /* ===== HERO ===== */
@@ -100,7 +100,7 @@ a {
 .hero-content p {
     margin-top: 10px;
     font-size: 1.1rem;
-    color: #555;
+    color: #e6d27a;
 }
 
 
