@@ -66,7 +66,7 @@ a {
 
 .nav-links a {
     font-size: 0.9rem;
-    color:  #e6d27a;
+    color: #e6d27a;
 }
 
 /* ===== HERO ===== */
@@ -105,11 +105,101 @@ a {
 
 
 /* ===== SECCIONES ===== */
+
+/* ===============================
+   ABOUT & COLECCIÓN – ESTILO EDITORIAL CENTRADO
+   =============================== */
+
+#about,
+#coleccion {
+    background-color: #f7f3ee;
+    padding: 90px 20px;
+    text-align: center;
+}
+
+/* CONTENEDOR DE TEXTO */
+#about p,
+#coleccion p {
+    max-width: 680px;
+    margin: 0 auto 22px auto;
+    font-size: 0.95rem;
+    line-height: 1.85;
+    color: #3a3a3a;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+}
+
+/* TÍTULOS */
+#about h2,
+#coleccion h2 {
+    margin: 0 auto 18px auto;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #6b1f2b; /* vino tinto */
+    text-transform: none;
+}
+
+/* LÍNEA DECORATIVA */
+#about h2::after,
+#coleccion h2::after {
+    content: "";
+    display: block;
+    width: 55px;
+    height: 2px;
+    background-color: #6b1f2b;
+    margin: 14px auto 35px auto;
+    border-radius: 2px;
+}
+
+/* PRIMER PÁRRAFO LIGERAMENTE DESTACADO (SIN CAMBIAR FUENTE) */
+#about p:first-of-type,
+#coleccion p:first-of-type {
+    font-weight: 500;
+    color: #2f2f2f;
+}
+
+/* EFECTO SUAVE DE ENTRADA (OPCIONAL PERO COOL) */
+#about,
+#coleccion {
+    animation: fadeUp 0.8s ease both;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    #about,
+    #coleccion {
+        padding: 70px 18px;
+    }
+
+    #about h2,
+    #coleccion h2 {
+        font-size: 1.7rem;
+    }
+
+    #about p,
+    #coleccion p {
+        font-size: 0.9rem;
+        line-height: 1.75;
+    }
+}
+
 .section {
     padding: 80px 10%;
     background-color: #fff;
 }
-
 .section:nth-child(even) {
     background-color: var(--arena);
 }
@@ -117,9 +207,8 @@ a {
 .section h2 {
     font-size: 2rem;
     margin-bottom: 20px;
-    color: var(--verde);
+    color: #7a1f2b;
 }
-
 .section p {
     max-width: 700px;
     margin-bottom: 15px;
@@ -137,8 +226,11 @@ a {
     text-align: center;
 }
 
-.contact p {
-    margin-bottom: 8px;
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* centra horizontal */
+    text-align: center;    /* centra texto */
 }
 
 /* ===== FOOTER ===== */
