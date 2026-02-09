@@ -68,6 +68,30 @@ a {
     font-size: 0.9rem;
     color: #e6d27a;
 }
+/* ===== NAVBAR MOBILE FIX ===== */
+.nav-links {
+    display: flex;
+    flex-wrap: nowrap;           /* 🔑 no permitir salto de línea */
+    overflow-x: auto;            /* 🔑 scroll horizontal */
+    gap: 14px;
+    padding: 10px 14px;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Quitar scrollbar visual */
+.nav-links::-webkit-scrollbar {
+    display: none;
+}
+
+.nav-links li {
+    flex: 0 0 auto;              /* 🔑 cada item mantiene su tamaño */
+}
+
+.nav-links a {
+    white-space: nowrap;         /* 🔑 evita que el texto se parta */
+    font-size: 0.75rem;
+    color: #e6d27a;
+}
 
 /* ===== HERO ===== */
 .hero {
@@ -112,7 +136,6 @@ a {
 
 #about,
 #coleccion {
-    background-color: #f7f3ee;
     padding: 90px 20px;
     text-align: center;
 }
