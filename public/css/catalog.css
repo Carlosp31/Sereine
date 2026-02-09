@@ -35,12 +35,12 @@
 .product-card h3 {
     font-size: 1rem;
     margin-bottom: 5px;
-    color: black;
+    color: white;
 }
 
 .product-card p {
     font-size: 0.85rem;
-    color: black;
+    color: white;
     margin: 4px 0;
     letter-spacing: 0.2px;
 }
@@ -48,7 +48,7 @@
 
 .product-card span {
     font-size: 0.8rem;
-    color: black;
+    color: white;
 }
 .modal {
     position: fixed;
