@@ -10,10 +10,19 @@ html {
 }
 
 body {
-    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-family: "Playfair Display", "hatton";
     background-color: #fdfdfb;
-    color: #2e2e2e;
+    color: black;
     line-height: 1.6;
+}
+/* H2 en secciones impares */
+.section:nth-of-type(odd) h2 {
+    color: #e6d27a;
+}
+
+/* H2 en secciones pares */
+.section:nth-of-type(even) h2 {
+    color: #e6d27a;
 }
 
 /* ===== VARIABLES ===== */
@@ -22,6 +31,7 @@ body {
     --coral: #e07a5f;
     --arena: #f4f1ec;
     --oscuro: #2e2e2e;
+    --vinotinto:#8b1d2c;
 }
 
 /* ===== LINKS ===== */
@@ -92,6 +102,16 @@ a {
     font-size: 0.75rem;
     color: #e6d27a;
 }
+/* SECCIONES IMPARES */
+.section:nth-of-type(odd) {
+    background-color: #1f646b;
+
+}
+
+/* SECCIONES PARES */
+.section:nth-of-type(even) {
+    background-color: var( --vinotinto);
+}
 
 /* ===== HERO ===== */
 .hero {
@@ -147,20 +167,22 @@ a {
     margin: 0 auto 22px auto;
     font-size: 0.95rem;
     line-height: 1.85;
-    color: #3a3a3a;
+    color: #e6d27a;
     font-weight: 400;
     letter-spacing: 0.2px;
 }
 
 /* TÍTULOS */
-#about h2,
-#coleccion h2 {
+#about h2 {
     margin: 0 auto 18px auto;
     font-size: 2rem;
     font-weight: 600;
     letter-spacing: 1px;
-    color: #6b1f2b; /* vino tinto */
+    color: #e6d27a; /* vino tinto */
     text-transform: none;
+}
+#coleccion h2{
+color:  #e6d27a;
 }
 
 /* LÍNEA DECORATIVA */
@@ -170,16 +192,19 @@ a {
     display: block;
     width: 55px;
     height: 2px;
-    background-color: #6b1f2b;
+    background-color: #e6d27a;
     margin: 14px auto 35px auto;
     border-radius: 2px;
 }
 
-/* PRIMER PÁRRAFO LIGERAMENTE DESTACADO (SIN CAMBIAR FUENTE) */
-#about p:first-of-type,
-#coleccion p:first-of-type {
-    font-weight: 500;
-    color: #2f2f2f;
+#coleccion h2::after {
+    content: "";
+    display: block;
+    width: 55px;
+    height: 2px;
+    background-color:  #e6d27a;
+    margin: 14px auto 35px auto;
+    border-radius: 2px;
 }
 
 /* EFECTO SUAVE DE ENTRADA (OPCIONAL PERO COOL) */
@@ -253,7 +278,7 @@ a {
 #accesorios .product-card h3 {
     font-size: 0.95rem;
     font-weight: 600;
-    color: #ffffff;
+    color: #e6d27a;
     margin-bottom: 6px;
     letter-spacing: 0.5px;
 }
@@ -261,7 +286,7 @@ a {
 /* PRECIO */
 #accesorios .product-card p {
     font-size: 0.8rem;
-    color: #e6e6e6;
+    color: #e6d27a;
     opacity: 0.9;
 }
 
@@ -279,16 +304,12 @@ a {
 
 .section {
     padding: 80px 10%;
-    background-color: #fff;
-}
-.section:nth-child(even) {
-    background-color: var(--arena);
+    text-align: center;
 }
 
 .section h2 {
     font-size: 2rem;
     margin-bottom: 20px;
-    color: #7a1f2b;
 }
 .section p {
     max-width: 700px;
@@ -297,22 +318,17 @@ a {
 
 /* ===== LISTA DE CUIDADOS ===== */
 .care-list {
-    max-width: 600px;
-    list-style: disc;
-    padding-left: 20px;
+    list-style-position: inside;
+    padding: 0;
+    margin: 0 auto;
+    text-align: left;
+    display: inline-block;
 }
+
+
 
 /* ===== CONTACTO ===== */
-.contact {
-    text-align: center;
-}
 
-.contact {
-    display: flex;
-    flex-direction: column;
-    align-items: center;   /* centra horizontal */
-    text-align: center;    /* centra texto */
-}
 
 /* ===== FOOTER ===== */
 .footer {
@@ -360,4 +376,21 @@ a {
     .section h2 {
         font-size: 1.6rem;
     }
+}
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* centra horizontal */
+    text-align: center;    /* centra texto */
+}
+.section.contact {
+    background-color: #f4f1ec !important;
+    color: black;
+}
+
+.section.contact h2{
+    color:  #8b1d2c;
+}
+#cuidados {
+   color: #e6d27a;
 }
