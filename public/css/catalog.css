@@ -8,7 +8,7 @@
 
 /* ===== TARJETA ===== */
 .product-card {
-    background-color:#1f646b;
+    background-color:#8b1d2c;
     border-radius: 12px;
     padding: 15px;
     text-align: center;
@@ -35,12 +35,12 @@
 .product-card h3 {
     font-size: 1rem;
     margin-bottom: 5px;
-    color: white;
+    color: #e6d27a;
 }
 
 .product-card p {
     font-size: 0.85rem;
-    color: white;
+    color: #e6d27a;
     margin: 4px 0;
     letter-spacing: 0.2px;
 }
@@ -48,16 +48,43 @@
 
 .product-card span {
     font-size: 0.8rem;
-    color: white;
+    color: #e6d27a;
 }
 .modal {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0,0,0,0.65);
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     z-index: 1000;
+}
+.modal-content {
+    background: #fff;
+    border-radius: 18px;
+    max-width: 900px;
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 30px;
+    gap: 30px;
+    position: relative;
+}
+.modal-left img {
+    width: 100%;
+    max-height: 480px;
+    object-fit: contain;
+    border-radius: 14px;
+}
+.modal-right h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #2e2e2e;
+}
+
+.modal-right p {
+    font-size: 1rem;
+    margin-bottom: 12px;
 }
 
 .modal.hidden {
@@ -72,12 +99,12 @@
 
 .close-modal {
     position: absolute;
-    top: 24px;
-    right: 32px;
-    font-size: 32px;
-    color: white;
+    top: 18px;
+    right: 22px;
+    font-size: 28px;
     cursor: pointer;
 }
+
 .product-card img {
     cursor: zoom-in;
 }
@@ -92,5 +119,11 @@
 
     .products-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 768px) {
+    .modal-content {
+        grid-template-columns: 1fr;
+        padding: 20px;
     }
 }
