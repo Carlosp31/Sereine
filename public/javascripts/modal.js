@@ -59,3 +59,30 @@ prevBtn.onclick = () => {
 document.querySelector(".close-modal").onclick = () => {
     modal.classList.add("hidden");
 };
+
+const closeBtn = document.querySelector(".close-modal");
+
+closeBtn.addEventListener("click", () => {
+    modal.classList.add("hidden");
+});
+modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+        modal.classList.add("hidden");
+    }
+});
+let startX = 0;
+
+modalImg.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].clientX;
+});
+
+modalImg.addEventListener("touchend", (e) => {
+    let endX = e.changedTouches[0].clientX;
+    let diff = startX - endX;
+
+    if (diff > 50) {
+        nextBtn.click(); // swipe izquierda
+    } else if (diff < -50) {
+        prevBtn.click(); // swipe derecha
+    }
+});
