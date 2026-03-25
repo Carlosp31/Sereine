@@ -3,6 +3,7 @@ const modalImg = document.getElementById("modal-image");
 const modalTitle = document.getElementById("modal-title");
 const modalPrice = document.getElementById("modal-price");
 const modalVariants = document.getElementById("modal-variants");
+const modalInfo = document.getElementById("modal-info"); // 👈 NUEVO
 
 const prevBtn = document.querySelector(".prev");
 const nextBtn = document.querySelector(".next");
@@ -15,13 +16,12 @@ document.querySelectorAll(".product-card img").forEach(img => {
     img.addEventListener("click", () => {
 
         // convertir string → array
-        
         images = img.dataset.images.split(",").map(i => i.trim());
         currentIndex = 0;
 
         modalImg.src = images[currentIndex];
 
-        // 👇 AQUÍ CONTROLAS LAS FLECHAS
+        // 👇 CONTROL FLECHAS
         if (images.length <= 1) {
             prevBtn.style.display = "none";
             nextBtn.style.display = "none";
@@ -33,6 +33,10 @@ document.querySelectorAll(".product-card img").forEach(img => {
         modalTitle.textContent = img.dataset.title;
         modalPrice.textContent = img.dataset.price;
 
+        // 👇 INFO DINÁMICA
+        modalInfo.textContent = img.dataset.info || "";
+
+        // 👇 CAMISETAS vs ACCESORIOS
         if (img.dataset.type === "camiseta") {
             modalVariants.style.display = "block";
         } else {
@@ -55,21 +59,20 @@ prevBtn.onclick = () => {
     modalImg.src = images[currentIndex];
 };
 
-// 👉 cerrar
-document.querySelector(".close-modal").onclick = () => {
+// 👉 cerrar (unificado)
+const closeModal = () => {
     modal.classList.add("hidden");
 };
 
-const closeBtn = document.querySelector(".close-modal");
+document.querySelector(".close-modal").addEventListener("click", closeModal);
 
-closeBtn.addEventListener("click", () => {
-    modal.classList.add("hidden");
-});
 modal.addEventListener("click", (e) => {
     if (e.target === modal) {
-        modal.classList.add("hidden");
+        closeModal();
     }
 });
+
+// 👉 swipe móvil
 let startX = 0;
 
 modalImg.addEventListener("touchstart", (e) => {
